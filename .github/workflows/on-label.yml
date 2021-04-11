@@ -12,6 +12,7 @@ jobs:
       - name: Notify zulip interest group
         run: |
           pip3 install zulip
+          env
           zulip-send \
             --site $ZULIP_SITE \
             --api-key $ZULIP_API_KEY \
