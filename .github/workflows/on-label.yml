@@ -1,5 +1,5 @@
 on: issues
-types: labeled
+  types: labeled
 jobs:
   notify:
     if: ${{contains(github.event.issue.labels.*.name, 'early-adopter-review')}
