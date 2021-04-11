@@ -14,9 +14,9 @@ jobs:
           pip3 install zulip
           env
           zulip-send \
-            --site $ZULIP_SITE \
-            --api-key $ZULIP_API_KEY \
-            --user $ZULIP_USER \
-            --stream $ZULIP_STREAM \
+            --site ${{secrets.ZULIP_SITE}} \
+            --api-key ${{secrets.ZULIP_API_KEY}} \
+            --user ${{secrets.ZULIP_USER}} \
+            --stream ${{secrets.ZULIP_STREAM}} \
             --subject "Early Adopters: Review Request!" \
             --message "${ISSUE_TITLE} -- see ${ISSUE_URL}"
