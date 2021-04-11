@@ -1,11 +1,12 @@
 on: issues
-type: labeled
+types: labeled
 jobs:
   notify:
     if: ${{contains(github.event.issue.labels.*.name, 'early-adopter-review')}
     runs-on: ubuntu-latest
     env:
-      ISSUE_URL: ${{github.event.issue.url}}
+      ISSUE_TITLE: ${{github.event.issue.title}}
+      ISSUE_URL: ${{github.event.issue.html_url}}
     steps:
       - name: Notify zulip interest group
         run: |
@@ -16,4 +17,4 @@ jobs:
             --user $ZULIP_USER \
             --stream $ZULIP_STREAM \
             --subject "Early Adopters: Review Request!" \
-            --message "See issue: ${ISSUE_URL}"
+            --message "${ISSUE_TITLE}\nReview at ${ISSUE_URL}"
