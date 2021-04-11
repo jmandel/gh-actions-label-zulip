@@ -3,7 +3,7 @@ on:
     types: labeled
 jobs:
   notify:
-    if: ${{contains(github.event.issue.labels.*.name, 'early-adopter-review')}
+    if: ${{contains(github.event.issue.labels.*.name, 'early-adopter-review')}}
     runs-on: ubuntu-latest
     env:
       ISSUE_TITLE: ${{github.event.issue.title}}
