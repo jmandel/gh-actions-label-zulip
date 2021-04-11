@@ -18,4 +18,4 @@ jobs:
             --user $ZULIP_USER \
             --stream $ZULIP_STREAM \
             --subject "Early Adopters: Review Request!" \
-            --message "${ISSUE_TITLE}\nReview at ${ISSUE_URL}"
+            --message "${ISSUE_TITLE} -- see ${ISSUE_URL}"
