@@ -6,8 +6,8 @@ jobs:
     if: ${{contains(github.event.issue.labels.*.name, 'early-adopter-review')}}
     runs-on: ubuntu-latest
     env:
-      ISSUE_TITLE: ${{github.event.issue.title}}
-      ISSUE_URL: ${{github.event.issue.html_url}}
+      ISSUE_TITLE: ${{join([github.event.issue.title, github.event.pull_request.title])}}
+      ISSUE_URL: ${{join([github.event.issue.html_url, github.event.pull_request.html_url])}}
     steps:
       - name: Notify zulip interest group
         run: |
